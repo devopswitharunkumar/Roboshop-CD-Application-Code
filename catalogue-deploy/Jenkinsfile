@@ -5,6 +5,7 @@ pipeline {
         }
     }
     environment {
+        Greeting = 'Arun'
         //  packageVersion = ''
     }
     options {
