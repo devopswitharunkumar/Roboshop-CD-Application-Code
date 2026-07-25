@@ -35,10 +35,20 @@ pipeline {
                 """
             }
         }
-        post {
-            always {
-                echo "always runs this"
-            }
+        // stage('Plan') {
+        //     steps {
+        //         sh """
+        //             pwd
+        //             cd catalogue-deploy/terraform/
+        //             pwd
+        //             terraform init --backend-config=${params.environment}/backend.tf -reconfigure
+        //         """
+        //     }
+        // }
+    }
+    post {
+        always {
+            echo "always runs this"
         }
     }
 }
