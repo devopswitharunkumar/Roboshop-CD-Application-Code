@@ -1,0 +1,27 @@
+pipeline {
+    agent {
+        node {
+            label 'Agent-1'
+        }
+    }
+    environment {
+        //  packageVersion = ''
+    }
+    options {
+        timeout(time:1, unit:'HOURS' )
+    }
+    parameters {
+        string (name:'version', defaultValue: '1.0.0', description:'what is Application artifact Version ?')
+        string (name:'environment', defaultValue: 'Dev', description:'What is the environment ?')
+    }
+    stages {
+        stage('Print Version') {
+            steps {
+                sh """
+                    echo "version : ${params.version}"
+                    echo "environment : ${params.version}"
+                """
+            }
+        }
+    }
+}
