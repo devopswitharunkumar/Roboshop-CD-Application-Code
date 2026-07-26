@@ -27,7 +27,7 @@ variable "tags" {
 
 
 variable "zone_name" {
-  default = "devopswitharun.online"
+  # default = "devopswitharun.online"
 }
 
 variable "app_version" {

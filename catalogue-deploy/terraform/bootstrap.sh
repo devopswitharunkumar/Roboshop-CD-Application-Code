@@ -4,6 +4,8 @@ set -e
 
 component=$1
 environment=$2
+app_version=$3
+
 
 dnf install -y python3 python3-pip python3-boto3 python3-botocore git ansible
 
@@ -18,5 +20,5 @@ fi
 
 ###########we are implememting pull based architecture for databases########
 
-ansible-pull -U https://github.com/devopswitharunkumar/roboshop-ansible-with-roles-for-terraform-infra-usage.git -e component=$component -e env=$environment main-tf.yaml
+ansible-pull -U https://github.com/devopswitharunkumar/roboshop-ansible-with-roles-for-CD-deploy-usage.git -e component=$component -e env=$environment -r app_version=#app_version main-tf.yaml
 

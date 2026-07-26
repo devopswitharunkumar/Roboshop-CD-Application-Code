@@ -59,7 +59,7 @@ resource "null_resource" "catalogue" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/bootstrap.sh",
-      "sudo sh /tmp/bootstrap.sh catalogue dev"
+      "sudo sh /tmp/bootstrap.sh catalogue dev ${var.app_version}"
     ]
   }
 }
