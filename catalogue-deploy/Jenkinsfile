@@ -47,14 +47,14 @@ pipeline {
             }
         }
         //we need to attach roboshop-dev-vpn sg to agent-1 ec2 sg group to work 
-        stage('Apply') {
-            steps {
-                sh """
-                    cd catalogue-deploy/terraform/
-                    terraform apply -var-file=${params.environment}/${params.environment}.tfvars -var="app_version=${params.version}" -auto-approve
-                """
-            }
-        }
+        // stage('Apply') {
+        //     steps {
+        //         sh """
+        //             cd catalogue-deploy/terraform/
+        //             terraform apply -var-file=${params.environment}/${params.environment}.tfvars -var="app_version=${params.version}" -auto-approve
+        //         """
+        //     }
+        // }
         stage('Destroy') {
             steps {
                 sh """
