@@ -20,5 +20,5 @@ fi
 
 ###########we are implememting pull based architecture for databases########
 
-ansible-pull -U https://github.com/devopswitharunkumar/roboshop-ansible-with-roles-for-CD-deploy-usage.git -e component=$component -e env=$environment -r app_version=#app_version main-tf.yaml
+ansible-pull -U https://github.com/devopswitharunkumar/roboshop-ansible-with-roles-for-CD-deploy-usage.git -e component=$component -e env=$environment -r app_version=$app_version main-tf.yaml
 

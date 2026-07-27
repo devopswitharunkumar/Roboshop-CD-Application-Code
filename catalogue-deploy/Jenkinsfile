@@ -1,3 +1,6 @@
+// we need to do infra creation until 01-vpn,02-sg,03-vppn.04-databases and 05-app-alb create via manually to work catalogue
+// add roboshop-dev-vpn to agent instance to run catalogue
+
 pipeline {
     agent {
         node {
