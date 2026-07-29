@@ -18,7 +18,7 @@ pipeline {
     parameters {
         string (name:'version', defaultValue: '', description:'what is Application artifact Version ?')
         string (name:'environment', defaultValue: '', description:'What is the environment ?')
-        choice (name: 'action', choices: ['Apply', 'Destroy'])
+        // choice (name: 'action', choices: ['Apply', 'Destroy'])
     }
     stages {
         stage('Print Version') {
@@ -49,11 +49,6 @@ pipeline {
         }
         //we need to attach roboshop-dev-vpn sg to agent-1 ec2 sg group to work 
         stage('Apply') {
-            when {
-                expression {
-                    params.action == 'Apply'
-                }
-            }
             steps {
                 sh """
                     cd catalogue-deploy/terraform/
@@ -62,11 +57,11 @@ pipeline {
             }
         }
         stage('Destroy') {
-            when {
-                expression {
-                    params.action == 'Destroy'
-                }
-            }
+            // when {
+            //     expression {
+            //         params.action == 'Destroy'
+            //     }
+            // }
             steps {
                 sh """
                     cd catalogue-deploy/terraform/
