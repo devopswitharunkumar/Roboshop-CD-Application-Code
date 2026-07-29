@@ -38,3 +38,10 @@ variable "app_version" {
 variable "iam_instance_profile" {
     default = "TerraformRoleForEc2"
 }
+
+variable "app_alb_listner_arn" {
+}
+
+variable "alb_listner_rule_priority" {
+  
+}
