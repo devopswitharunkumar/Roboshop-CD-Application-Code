@@ -43,5 +43,5 @@ variable "app_alb_listner_arn" {
 }
 
 variable "alb_listner_rule_priority" {
-  
+  default = 120
 }
